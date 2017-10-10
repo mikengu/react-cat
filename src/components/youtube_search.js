@@ -12,7 +12,7 @@ module.exports = function (options, callback) {
     key: options.key,
     q: options.term,
     type: 'video',
-    maxResults: 50
+    maxResults: 20
   };
 
   axios.get(ROOT_URL, { params: params })
