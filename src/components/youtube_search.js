@@ -15,7 +15,7 @@ module.exports = function (options, callback) {
     maxResults: 20
   };
 
-  axios.get(ROOT_URL, { params: params })
+  axios.get(ROOT_URL, { params })
     .then(function(response) {
       if (callback) { callback(response.data.items); }
     })
