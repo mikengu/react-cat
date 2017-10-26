@@ -3,13 +3,12 @@ import ReactDOM from "react-dom";
 import YoutubeSearch from "./youtube_search";
 import VideoDetail from "./video_detail";
 import { searchTerms } from "./searchTerms";
+import { randomNum } from "./randomGenerator";
 
 import api from "../config";
 const API_KEY = api.key;
 
-
-const randomNum = maxRange => Math.floor(Math.random() * maxRange)
-
+const numOfSearchTerms = searchTerms.length;
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +18,7 @@ class App extends Component {
       selectedVideo: null
     };
     
-    this.videoSearch(searchTerms[randomNum(searchTerms.length)]);
+    this.videoSearch(searchTerms[randomNum(numOfSearchTerms)]);
   }
 
 
@@ -41,7 +40,10 @@ class App extends Component {
   render() {
     return (
       <div>        
-        <VideoDetail video={this.state.selectedVideo} />        
+        <VideoDetail 
+        video={this.state.selectedVideo} 
+        videoSearch={this.videoSearch}
+        />        
       </div>
     );
   }
