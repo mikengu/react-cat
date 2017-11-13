@@ -17,10 +17,9 @@ class App extends Component {
       videos: [],
       selectedVideo: null
     };
-    
+
     this.videoSearch(searchTerms[randomNum(numOfSearchTerms)]);
   }
-
 
   videoSearch(term) {
     YoutubeSearch(
@@ -29,9 +28,10 @@ class App extends Component {
         term: term
       },
       videos => {
+        const listOfVideos = 7;
         this.setState({
           videos,
-          selectedVideo: videos[randomNum(7)]
+          selectedVideo: videos[randomNum(listOfVideos)]
         });
       }
     );
@@ -39,11 +39,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>        
-        <VideoDetail 
-        video={this.state.selectedVideo} 
-        videoSearch={this.videoSearch}
-        />        
+      <div>
+        <VideoDetail
+          video={this.state.selectedVideo}
+          videoSearch={this.videoSearch}
+        />
       </div>
     );
   }
