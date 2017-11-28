@@ -1,12 +1,7 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-require('./style.css');
-var App = require('./components/App');
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+import "normalize-css/normalize.css";
+import "./styles/styles.scss";
 
-
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('container')
-);
-
+ReactDOM.render(<App />, document.getElementById("root"));
