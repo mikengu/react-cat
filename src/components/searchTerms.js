@@ -1,1 +1,27 @@
-export const searchTerms = ["I am maru", "cute micro pig video", "fluffy cat", "Maru cat", "chubby cute cat", "cat exercising", "cute kitten", "cute bobtail cat", "aww adorbable kitten", "boxes maru", "kitten playing", "adorable cat", "adorable kitten", "surprise kitty", "silly cat", "naughty cat", "bath kitten", "tiny kittens", "cat and boxes", "japanese cat island", "milo kitten", "bone fluffy cat", "munchkin baby cat", "tiny kitten meow", "fluffy cat demanding attention"];
+export const searchTerms = [
+  "I am maru",
+  "cute micro pig video",
+  "fluffy cat",
+  "Maru cat",
+  "chubby cute cat",
+  "cat exercising",
+  "cute kitten",
+  "cute bobtail cat",
+  "aww adorbable kitten",
+  "boxes maru",
+  "kitten playing",
+  "adorable cat",
+  "adorable kitten",
+  "surprise kitty",
+  "silly cat",
+  "naughty cat",
+  "bath kitten",
+  "tiny kittens",
+  "cat and boxes",
+  "japanese cat island",
+  "milo kitten",
+  "bone fluffy cat",
+  "munchkin baby cat",
+  "tiny kitten meow",
+  "fluffy cat demanding attention"
+];

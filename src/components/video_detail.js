@@ -3,7 +3,7 @@ import React from "react";
 const VideoDetail = ({ video }) => {
   if (!video) {
     return (
-      <div className="container">
+      <div className="container-loader">
         <div className="loader" />
       </div>
     );
@@ -14,7 +14,7 @@ const VideoDetail = ({ video }) => {
   return (
     <div>
       <h1 className="p-4">Breaktime. Here's a cat video.</h1>
-      <div className="video-container col-md-8">
+      <div className="video-container col-12">
         <div className="embed-responsive embed-responsive-16by9">
           <iframe className="embed-responsive-item" src={url} />
         </div>

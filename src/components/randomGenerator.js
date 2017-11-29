@@ -1,1 +1,1 @@
-export const randomNum = maxRange => Math.floor(Math.random() * maxRange)
+export const randomize = n => Math.floor(Math.random() * n);

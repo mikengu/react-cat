@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import YoutubeSearch from "./youtube_search";
 import VideoDetail from "./video_detail";
 import { searchTerms } from "./searchTerms";
-import { randomNum } from "./randomGenerator";
+import { randomize } from "./randomGenerator";
+import { api } from "../config";
 
-import api from "../config";
 const API_KEY = api.key;
+const numOfSearchItems = searchTerms.length;
 
-const numOfSearchTerms = searchTerms.length;
 class App extends Component {
   constructor(props) {
     super(props);
@@ -18,32 +18,44 @@ class App extends Component {
       selectedVideo: null
     };
 
-    this.videoSearch(searchTerms[randomNum(numOfSearchTerms)]);
+    this.videoSearch(searchTerms[randomize(numOfSearchItems)]);
+    this.btnClick = this.btnClick.bind(this);
   }
 
   videoSearch(term) {
     YoutubeSearch(
       {
         key: API_KEY,
-        term: term
+        term
       },
       videos => {
         const listOfVideos = 7;
         this.setState({
           videos,
-          selectedVideo: videos[randomNum(listOfVideos)]
+          selectedVideo: videos[randomize(listOfVideos)]
         });
       }
     );
   }
 
+  btnClick() {
+    this.videoSearch(searchTerms[randomize(numOfSearchItems)]);
+  }
+
   render() {
     return (
-      <div>
-        <VideoDetail
-          video={this.state.selectedVideo}
-          videoSearch={this.videoSearch}
-        />
+      <div className="mainContainer">
+        <div className="a">
+          <VideoDetail
+            video={this.state.selectedVideo}
+            videoSearch={this.videoSearch}
+          />
+        </div>
+        <div className="b">
+          <button className="btn" type="submit" onClick={this.btnClick}>
+            <img className="cat" src="/public/images/Cat.png" />
+          </button>
+        </div>
       </div>
     );
   }
