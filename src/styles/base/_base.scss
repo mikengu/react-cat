@@ -23,6 +23,7 @@
 
 .b {
   flex-grow: 1;
+  backface-visibility: hidden;
 }
 
 .title {
@@ -32,4 +33,23 @@
 .cat {
   min-width: 100%;
   max-height: 10rem;
+  background: none;
+}
+
+.cat:hover {
+  animation: rotateSideToSide 3s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotateSideToSide {
+  0% {
+    transform: skewX(0deg);
+  }
+  50% {
+    transform: skewX(20deg);
+  }
+
+  100% {
+    transform: skewY(0deg);
+  }
 }

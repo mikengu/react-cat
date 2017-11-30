@@ -53,7 +53,8 @@ class App extends Component {
         </div>
         <div className="b">
           <button className="btn" type="submit" onClick={this.btnClick}>
-            <img className="cat" src="/public/images/Cat.png" />
+            <img className="cat" src="/images/Cat.png" />
+            {/* <img className="cat" src="../../public/images/Cat.png" /> */}
           </button>
         </div>
       </div>
